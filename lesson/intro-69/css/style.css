@@ -146,13 +146,32 @@ body {
 
 /* ================================================================= */
 
+
+.main__body {
+  width: 100%;
+  max-width: 792px;
+}
+
+
 .main__general {
   padding: 120px 0;
 }
 
+
 .main__wrapper {
   display: flex;
-  gap: 126px;
+  align-items: start;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.main__sidebar{
+  position: sticky;
+  top: 5vh;
+}
+
+.main__gallery {
+  margin-bottom: 15.1%;
 }
 
 .sidebar {
@@ -161,6 +180,7 @@ body {
   max-width: 282px;
   width: 100%;
   border: 2px solid #D0DCE7;
+  min-height: 60vh;
 }
 
 .sidebar__item {
@@ -233,6 +253,7 @@ body {
 
 /* ====================================================== */
 
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -245,6 +266,7 @@ body {
   display: block;
   position: relative;
   overflow: hidden;
+  padding-bottom: 180px;
 }
 
 .gallery__img:hover .gallery__hint {
@@ -253,7 +275,15 @@ body {
 }
 
 .gallery__img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .gallery__img--large-left {
@@ -286,4 +316,83 @@ body {
   height: 54px;
   transition: all .5s;
   transform: translateY(100%);
+}
+
+/* ===================================================== */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.products__item {}
+
+.products__item-img {
+  position: relative;
+  padding-bottom: 62%;
+}
+
+.products__item-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.products__item-badge {
+  position: absolute;
+  top: 20.168%;
+  color: #1D6FB6;
+  padding: 4.7% 7.6%;
+  border-radius: 0px 100px 100px 0px;
+  background: #F8FCFF;
+  min-width: 33.856%;
+  text-align: center;
+  animation: badge-active 2s infinite alternate;
+}
+
+.products__body {
+  border: 1px #D0DCE7 solid;
+  border-top: none;
+  padding: 15px 12px;
+}
+
+.products__body-button {
+  margin: 0 auto;
+}
+
+@keyframes badge-active{
+  0%{
+    width: 33.856%;
+  }
+
+  66.666%{
+    width: 33.856%;
+  }
+
+  100%{
+    width: 38.55%;
+  }
+}
+
+
+/* ======================================== */
+
+.footer{
+  background: #788088;
+  color: #F8FCFF;
+  font-weight: 400;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer__inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
